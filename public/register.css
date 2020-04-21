@@ -1,0 +1,144 @@
+body {
+	max-width: 80%;
+	margin: 0 auto;
+	padding: 0 2.7rem;
+	margin-top: 1rem;
+}
+
+a {
+	color: #392600;
+	font-family: Times new Roman, Roboto, sans-serif;
+}
+
+label {
+	font-weight: bold;
+}
+.span {
+	color: #f00;
+}
+
+#contain {
+	border: 2px solid #dede;
+	border-radius: 1rem;
+	padding: 1rem;
+}
+.nav {
+	color: #392600;
+}
+.navbar-brand {
+	font-style: italic;
+	font-weight: bold;
+	font-size: 2rem;
+	font-family: Times new Roman, Roboto, sans-serif;
+}
+.nav-link {
+	font-family: Times new Roman, Roboto, sans-serif;
+}
+.form-inline {
+	font-family: Times new Roman, Roboto, sans-serif;
+}
+.allcontent {
+	margin-top: 1.5rem;
+	padding-top: 7rem;
+	color: #392600;
+	font-family: Times new Roman, Roboto;
+	padding-bottom: 5rem;
+}
+form {
+	font-size: 1rem;
+}
+
+h2 {
+	text-align: center;
+	font-weight: bold;
+	font-style: italic;
+	color: #392600;
+}
+
+/*#underline {
+	width: 6rem;
+	height: 0.2rem;
+	background-color: #392600;
+	margin: 0.3rem 28rem;
+}
+.heading-underline {
+	width: 6rem;
+	height: 0.1rem;
+	background-color: #dede;
+	margin-left: 5px;
+}*/
+fieldset {
+	border: 1px solid #add !important;
+	margin: 0;
+	xmin-width: 0;
+	padding: 10px;
+	position: relative;
+	border-radius: 4px;
+	background-color: #f5f5f5;
+	padding-left: 10px !important;
+}
+legend {
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin-bottom: 0px;
+	width: 30%;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	padding: 5px 5px 5px 10px;
+	background-color: #fff;
+}
+
+button {
+	border-radius: 1.8rem;
+	color: #392600;
+	border: 1px solid #392600; /*linear gradient of yellow*/
+	background-color: #ffc800;
+	/*font-family: Times New Roman, Times, serif;
+	font-size: 0.9rem;*/
+	font-weight: bold;
+	margin-top: 1rem;
+	padding: 0.7rem 2.2rem;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+}
+
+button:active {
+	transform: scale(0.95);
+}
+
+button:focus {
+	outline: none;
+}
+
+#btn-cancel {
+	/*background-color: #bf301c;*/
+	background-color: #da3b25;
+}
+
+footer {
+	background-color: #392600;
+	font-family: Times new Roman, Roboto;
+	color: #fff;
+	font-size: 1.2rem;
+	bottom: 0;
+	position: fixed;
+	left: 0;
+	right: 0;
+	text-align: center;
+	z-index: 999;
+}
+
+footer p {
+	margin: 0.4rem 0;
+}
+
+#footer {
+	margin-bottom: 1px;
+	max-width: 1.6rem;
+	border-radius: 50%;
+}
+img {
+	max-width: 5rem;
+	border-radius: 50%;
+}

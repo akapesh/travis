@@ -1,0 +1,42 @@
+extends layout
+block content 
+		
+		.allcontent
+			h2 Sales Executive Register
+			form.form-inline(action="/register/update")
+				.form-group.col-md-6
+					.form-group.mx-sm-3.mb-2
+						input#fname.form-control(type="text" placeholder="First Name")
+					button.btn.btn-outline-warning.mb-2(type="submit")
+						| Update
+			.container(style="width:74vw;")
+				.row
+					.col-md-12
+						table.table.table-lg.table-hover
+							thead.thead(style="background-color:#392600; color: #ffc800; ")
+								tr
+									//th(scope="col") #
+									th(scope="col") First Name
+									th(scope="col") Last Name
+									th(scope="col") User Name
+									th(scope="col") Email
+									th(scope="col") Phone
+									th(scope="col") Date
+									th(scope="col") WorkId
+									th(scope="col") Work Days
+									th(scope="col") Role
+							tbody
+								each staff in staffs
+									tr
+									td #{staff.fname}
+									td #{staff.lname}
+									td #{staff.uname}
+									td #{staff.email}
+									td #{staff.phone}
+									td #{staff.currdate}
+									td #{staff.workid}
+									td #{staff.days}
+									td #{staff.role}
+										form(method="post" action='/register/delete')
+											input(type="hidden", placeholder="", name="id", value=staff._id)
+											button.btn.btn-warning.btn-block(type="submit") Delete

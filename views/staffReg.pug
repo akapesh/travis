@@ -1,0 +1,107 @@
+extends layout
+block content 
+		.allcontent
+			h2 Sales Executive Registration
+			// <div class="heading-underline" id="underline"></div>
+			form.form(action="/user/staffList" method="post" style=" z-index: 1")
+				#contain.containter
+					// 1st fieldset
+					.panel.panel-default
+						.panel-body
+							fieldset.col-md-12
+								legend Personal Details
+								.panel.panel-default
+									.panel-body
+										// start of 1st row
+										.row
+											.col-lg-12
+												.form-row
+													.form-group.col-md-6
+														label.label
+															| FirstName
+															span(class="span") *
+														input#fname.form-control(type="text" name="fname" placeholder="Jane" required autocomplete="off" pattern="^[A-Za-z]+$" title="Names should contain alphabet characters ")
+													.form-group.col-md-6
+														label.label
+															| LastName
+															span(class="span") *
+														input#lname.form-control(type="text" name="lname" placeholder="Doe" required autocomplete="off" pattern="^[A-Za-z]+$" title="Names should contain alphabet characters ")
+												.form-group
+													label.label
+															| UserName
+															span(class="span") *
+													input#uname.form-control(type="text" name="uname" placeholder="JDoe" required autocomplete="off" pattern="^[A-Za-z]+$" title="User name should contain alphabet characters ")
+												.form-group
+													label.label
+															| EmailAddress
+													input#email.form-control(type="email" name="email" placeholder="@example.com" required autocomplete="off" title="Input correct email address")
+												.form-group
+													label.label
+															| MobileNumber
+															span(class="span") *
+													input#phone.form-control(type="text" name="phone" placeholder="MobileNo." required autocomplete="off" maxlength="10" minlength="10" title="Mobile number should be 10 characters")
+												.form-group
+													label.label
+															| CurrentDate
+															span(class="span") *
+													input#currdate.form-control(type="date" name="currdate" required title="Fill in date")
+										// end of 1st row
+					// end of 1st fieldset
+					hr
+					// 2nd fieldset
+					.panel.panel-default
+						.panel-body
+							fieldset.col-md-12
+								legend Other Details
+								.panel.panel-default
+									.panel-body
+										// start of 2nd row
+										.row
+											.col-lg-12
+												.form-row
+													.form-group.col-md-6
+														label.label
+															| Password
+															span(class="span") *
+														input#pwd.form-control(type="password" name="pwd" placeholder="Password" required autocomplete="off" minlength="6" maxlength="12" title="Password should be between 6-12 characters")
+													.form-group.col-md-6
+														label.label
+															| WorkID
+															span(class="span") *
+														input#workid.form-control(type="text" name="workid" placeholder="Work Id" required autocomplete="off" minlength="5" maxlength="35" title="WorkID should be between 6-12 characters")
+												.form-row
+													.form-group.col-md-6
+														label.label
+															| NumberOfWorkingDays
+															span(class="span") *
+														select.form-control.form-control-sm(name="days" required title="Fill in working days")
+															option(selected="" name="days" value="Default") None
+															option(name="days") 1-2 days
+															option(name="days") 1-5 days
+															option(name="days") 7 days
+													.form-group.col-md-6
+														label.label
+															| SalesPosition
+															span(class="span") *
+														select.form-control.form-control-sm(name="role" required title="Fill in sales role")
+															option(selected="" value="Default" name="role") None
+															option(name="role") Sales Executive
+															option(name="role") Supervisor
+										// end of 2nd row
+					// end of 2nd fieldset
+					.row
+						.col-lg-12
+							.form-row
+								.form-group.col-md-6
+									button(type="submit" name="submit") Submit
+								//
+									<form method="post" action="/register/update">
+									<div class="form-group col-md-3">
+									<button type="submit" name="submit">Update</button>
+									</div>
+									</form>
+								.form-group.col-md-6
+									button#btn-cancel(type="reset" name="reset")
+										| Cancel
+				// end of container
+		script(type="text/javascript" src="/static/js/bootstrap.min.js")

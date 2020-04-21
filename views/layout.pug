@@ -1,0 +1,44 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel="stylesheet" type="text/css" href="/static/css/bootstrap.css")
+    title BodaBoda Banja
+    link(rel="stylesheet" type="text/css" href="/static/register.css")
+    link(rel="shortcut icon" href="/static/images/logo1.jpeg" type="image/jpeg")
+  body(data-spy="scroll" data-target="#navbarResponsive")
+    .container
+      nav.navbar.navbar-expand-lg.navbar-light(class="bg-*" style="background-color: #ffc800; position:fixed;z-index: 10000")
+        a.navbar-brand(href="#")
+          img.d-inline-block.align-top(src="/static/images/logo2.jpeg" width="40" height="40")
+          |         BodaBoda - Banja
+        button.navbar-toggler(type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
+          span.navbar-toggler-icon
+        #navbarSupportedContent.collapse.navbar-collapse
+          ul.navbar-nav.ml-auto
+            li.nav-item.active
+              a.nav-link(href="#")
+                | Home 
+                span.sr-only (current)
+            li.nav-item
+              a.nav-link(href="/user/staffList") Staff List
+            li.nav-item
+              a.nav-link(href="/user/customerList") Customer List
+            li.nav-item
+              a.nav-link(href="/logout") Logout
+          form.form-inline.my-2.my-lg-0(action="/user/staffList")
+            input.form-control.mr-sm-2(name="fname" type="search" placeholder="Employee Search" aria-label="Search")
+            button.btn.btn-outline-info.my-2.my-sm-0(type="submit")
+              | Search
+
+      block content
+
+      footer
+        p
+          img#footer(src="/static/images/logo4.jpeg")
+          |         BodaBoda - Banja &copy 2020
+
+  script(src='https://code.jquery.com/jquery-3.4.1.slim.min.js', integrity='sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n', crossorigin='anonymous')
+  script(src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js', integrity='sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo', crossorigin='anonymous')
+  script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js', integrity='sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6', crossorigin='anonymous')          
