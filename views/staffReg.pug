@@ -3,7 +3,7 @@ block content
 		.allcontent
 			h2 Sales Executive Registration
 			// <div class="heading-underline" id="underline"></div>
-			form.form(action="/user/staffList" method="post" style=" z-index: 1")
+			form#registerForm.form(action="/user/staffList" method="post" style=" z-index: 1")
 				#contain.containter
 					// 1st fieldset
 					.panel.panel-default
@@ -74,7 +74,7 @@ block content
 														label.label
 															| NumberOfWorkingDays
 															span(class="span") *
-														select.form-control.form-control-sm(name="days" required title="Fill in working days")
+														select.form-control(name="days" required title="Fill in working days")
 															option(selected="" name="days" value="Default") None
 															option(name="days") 1-2 days
 															option(name="days") 1-5 days
@@ -83,7 +83,7 @@ block content
 														label.label
 															| SalesPosition
 															span(class="span") *
-														select.form-control.form-control-sm(name="role" required title="Fill in sales role")
+														select.form-control(name="role" required title="Fill in sales role")
 															option(selected="" value="Default" name="role") None
 															option(name="role") Sales Executive
 															option(name="role") Supervisor
@@ -93,11 +93,11 @@ block content
 						.col-lg-12
 							.form-row
 								.form-group.col-md-6
-									button(type="submit" name="submit") Submit
+									button(type="submit" name="submit" onclick="checkFormValidity()") Submit
 								//
 									<form method="post" action="/register/update">
 									<div class="form-group col-md-3">
-									<button type="submit" name="submit">Update</button>
+									<button type="submit" name="submit" ">Update</button>
 									</div>
 									</form>
 								.form-group.col-md-6
@@ -105,3 +105,4 @@ block content
 										| Cancel
 				// end of container
 		script(type="text/javascript" src="/static/js/bootstrap.min.js")
+		script(type="text/javascript" src="/static/user.js")

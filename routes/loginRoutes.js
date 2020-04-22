@@ -12,7 +12,9 @@ router.get("/", (req, res) => {
 
 router.post(
 	"/",
-	passport.authenticate("local", { failureRedirect: "/" }),
+	passport.authenticate("local", {
+		failureRedirect: "/",
+	}),
 	(req, res) => {
 		req.session.user = req.user;
 		const role = permissions[req.user.role];

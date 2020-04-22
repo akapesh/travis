@@ -3,7 +3,7 @@ block content
 		.allcontent
 			h2 Customer Registration
 			// <div class="heading-underline" id="underline"></div>
-			form.form(method="post" action="/user/customerList" style=" z-index: 1;" name="myform" onSubmit="validate()" )
+			form#registerForm.form(method="post" action="/user/customerList" style=" z-index: 1;")
 				#contain.containter
 					.row
 						// start of 1st column
@@ -22,33 +22,33 @@ block content
 														label.label
 															| FirstName
 															span(class="span") *
-														input#fname.form-control(type="text" name="fname" placeholder="Jane")
+														input#fname.form-control(type="text" name="fname" placeholder="Jane" required autocomplete="off" pattern="^[A-Za-z]+$" title="Names should contain alphabet characters ")
 													.form-group.col-md-6
 														label.label
 															| LastName
 															span(class="span") *
-														input#lname.form-control(type="text" name="lname" placeholder="Doe")
+														input#lname.form-control(type="text" name="lname" placeholder="Doe" required autocomplete="off" pattern="^[A-Za-z]+$" title="Names should contain alphabet characters ")
 												.form-group
 													label.label
 															| MobileNumber
 															span(class="span") *
-													input#phone.form-control(type="text" name="phone" placeholder="MobileNo.")
+													input#phone.form-control(type="text" name="phone" placeholder="MobileNo." required autocomplete="off" maxlength="10" minlength="10" title="Mobile number should be 10 characters")
 												.form-group
 													label.label
 															| DateOfBirth
 															span(class="span") *
-													input#date.form-control(type="date" name="dob" placeholder="BirthDate")
+													input#date.form-control(type="date" name="dob" placeholder="BirthDate" required title="Fill in date")
 												.form-group
 													label.label
 															| NIN
 															span(class="span") *
-													input#nin.form-control(type="text" name="nin" placeholder="NIN")
+													input#nin.form-control(type="text" name="nin" placeholder="NIN" required autocomplete="off" maxlength="13" minlength="13" title="NIN should be 13 characters")
 												.form-row
 													.form-group.col-md-6
 														label.label
 															| Nationality
 															span(class="span") *
-														select.form-control.form-control-sm(name="nation")
+														select.form-control(name="nation" required title="Select nationality")
 															option(selected="" name="nation" value="Default") Citizenship
 															option(name="nation") Uganda
 															option(name="nation") Kenya
@@ -59,7 +59,7 @@ block content
 													.form-group.col-md-6
 														label.label
 															| MaritalStatus
-														select.form-control.form-control-sm(name="status")
+														select.form-control(name="status")
 															option(selected="" name="status" value="Default")
 																| Select
 																| status
@@ -85,27 +85,27 @@ block content
 													label.label
 															| FirstName
 															span(class="span") *
-													input#reffname.form-control(type="text" name="reffname" placeholder="Refree's First name")
+													input#reffname.form-control(type="text" name="reffname" placeholder="Refree's First name" required autocomplete="off" pattern="^[A-Za-z]+$" title="Names should contain alphabet characters ")
 												.form-group
 													label.label
 															| LastName
 															span(class="span") *
-													input#reflname.form-control(type="text" name="reflname" placeholder="Refree's Last name")
+													input#reflname.form-control(type="text" name="reflname" placeholder="Refree's Last name" required autocomplete="off" pattern="^[A-Za-z]+$" title="Names should contain alphabet characters ")
 												.form-group
 													label.label
 															| MobileNumber
 															span(class="span") *
-													input#refphone.form-control(type="text" name="refphone" placeholder="Refree's MobileNo.")
+													input#refphone.form-control(type="text" name="refphone" placeholder="Refree's MobileNo." required autocomplete="off" maxlength="10" minlength="10" title="Mobile number should be 10 characters")
 												.form-group
 													label.label
 															| DateOfBirth
 															span(class="span") *
-													input#refdob.form-control(type="date" name="refdob" placeholder="Refree's BirthDate")
+													input#refdob.form-control(type="date" name="refdob" placeholder="Refree's BirthDate" required title="Fill in date")
 												.form-group
 													label.label
 															| PlaceOfWork
 															span(class="span") *
-													input#refwork.form-control(type="text" name="refwork" placeholder="Occupation")
+													input#refwork.form-control(type="text" name="refwork" placeholder="Occupation" required autocomplete="off" pattern="^[A-Za-z]+$" title="Input alphabet characters only")
 												// end of inner row
 							// end of 2nd fieldset
 						// end of 2nd column
@@ -126,18 +126,18 @@ block content
 														label.label
 															| LocalCouncil1
 															span(class="span") *
-														input#lc1.form-control(type="text" name="lc1" placeholder="LC 1")
+														input#lc1.form-control(type="text" name="lc1" placeholder="LC 1" required autocomplete="off" pattern="^[0-9a-zA-Z]+$" title="LC1 should contain alphanumeric characters ")
 													.form-group.col-md-6
 														label.label
 															| LocalCouncil2
 															span(class="span") *
-														input#lc3.form-control(type="text" name="lc3" placeholder="LC 3")
+														input#lc3.form-control(type="text" name="lc3" placeholder="LC 3" required autocomplete="off" pattern="^[0-9a-zA-Z]+$" title="LC3 should contain alphanumeric characters ")
 												.form-row
 													.form-group.col-md-12
 														label.label
 															| PrefferedBodaStage
 															span(class="span") *
-														input#stage.form-control(type="text" name="stage" placeholder="Stage Name")
+														input#stage.form-control(type="text" name="stage" placeholder="Stage Name" required autocomplete="off" pattern="^[0-9a-zA-Z]+$" title="BodaStage should contain alphanumeric characters ")
 												h6 Down Payment
 												//.heading-underline
 												.form-row
@@ -145,7 +145,7 @@ block content
 														label.label
 															| BodaBoda | TukTuk
 															span(class="span") *
-														select.form-control.form-control-sm(name="downpay")
+														select.form-control(name="downpay" required autocomplete="off" pattern="^[0-9a-zA-Z]+$" title="DownPayment should contain alphanumeric characters ")
 															option(selected="" name="bdownpay" value="Default") None
 															option(name="downpay")
 																| BodaBoda->850,000 -
@@ -157,7 +157,7 @@ block content
 														label.label
 															| TypeOfRide
 															span(class="span") *
-														select.form-control.form-control-sm(name="ride")
+														select.form-control(name="ride" required title="Fill Type of Ride")
 															option(selected="" name="ride" value="Default")
 																| Type of
 																| ride
@@ -169,7 +169,7 @@ block content
 														label.label
 															| OtherLoans
 															span(class="span") *
-														select.form-control.form-control-sm(name="otherloan")
+														select.form-control(name="otherloan" required title="Fill Type of Ride")
 															option(selected="" name="otherloan" value="Default")
 																| Other
 																| monies
@@ -187,10 +187,7 @@ block content
 															| FileUpload
 															span(class="span") *
 														.custom-file
-															input#customFile.custom-file-input(type="file")
-															label.custom-file-label(for="customFile")
-																| Choose
-																| file
+															input#exampleFormControlFile1.form-control-file(type="file" name="file" required title="Fill Type of Ride")
 												// start of inner row
 							// end of 3rd fieldset
 					// end of 3rd row
@@ -198,11 +195,11 @@ block content
 						.col-lg-12
 							.form-row
 								.form-group.col-md-6
-									button(type="submit" name="submit")
+									button(type="submit" name="submit" onclick="checkFormValidity()")
 										| Submit
 								.form-group.col-md-6
 									button#btn-cancel(type="reset" name="reset")
 										| Cancel
 					// end of button code
 		script(type="text/javascript" src="/static/js/bootstrap.min.js")
-		script(type="text/javascript" src="/static/register_validate.js")
+		script(type="text/javascript" src="/static/user.js")

@@ -15,7 +15,7 @@ router.post("/", async (req, res) => {
 	try {
 		//instance of the model User & save to return the content in the body
 		var user = new User(req.body);
-		console.log(req.body);
+		//console.log(req.body);
 		//after this is done the save returns a promise
 		//to save you require User from the model
 		await User.register(user, req.body.password, (err) => {
@@ -46,16 +46,6 @@ router.post("/delete2", async (req, res) => {
 		res.status(400).send("unable to delete from database");
 	}
 });
-
-// router.post('/linkhere/:idhere',async(req,res)=>{
-// try{
-// await yourModel.findByIdAndUpdate(req.params.idhere,{$set:{req.body},(err,user)=>{
-// if(err) return console.log(err)
-// })
-// }catch(error){
-// console.log(error
-// }
-// }
 
 // router.post("/update", async (req, res) => {
 // 	if (req.session.user) {
