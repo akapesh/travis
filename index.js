@@ -6,6 +6,8 @@ const loginRoutes = require("./routes/loginRoutes");
 const userRoutes = require("./routes/userRoutes");
 const registerRoutes = require("./routes/registerRoutes");
 
+var PORT = process.env.PORT || 4000;
+
 const session = require("express-session");
 const passport = require("passport");
 
@@ -25,14 +27,26 @@ server.use(bodyParser.urlencoded({ extended: true }));
 
 server.use(passport.initialize());
 
-mongoose.connect(
-	"mongodb://localhost:27017/bodaboda",
-	{ useNewUrlParser: true, useUnifiedTopology: true },
-	function(err) {
-		if (err) throw err;
-		console.log("Database connected");
-	}
-);
+const uri =
+	"mongodb+srv://PatienceA:k4Rjyhna7rWTUiS@cluster0.xpcwq.mongodb.net/bodaboda?retryWrites=true&w=majority";
+mongoose
+	.connect(uri, {
+		useNewUrlParser: true,
+		useUnifiedTopology: true,
+	})
+	.then(() => {
+		console.log("MongoDB Connected…");
+	})
+	.catch((err) => console.log(err));
+
+// mongoose.connect(
+// 	"mongodb://localhost:27017/bodaboda",
+// 	{ useNewUrlParser: true, useUnifiedTopology: true },
+// 	function(err) {
+// 		if (err) throw err;
+// 		console.log("Database connected");
+// 	}
+// );
 
 passport.use(User.createStrategy());
 passport.serializeUser(User.serializeUser());
@@ -70,6 +84,6 @@ server.get("*", (req, res) => {
 	res.render("error");
 });
 
-server.listen(4000, function() {
+server.listen(PORT, function() {
 	console.log("Listening at port 4000");
 });
